@@ -56,18 +56,22 @@ public class Times {
   public int getKeyMaxRepeatedValue() {
 
     Map.Entry<Integer, Integer> maxEntry = null;
+    if(minsValue.isEmpty()){
+      return 0;
+    }
     for(Map.Entry<Integer, Integer> entry : minsValue.entrySet()){
       if(maxEntry==null || entry.getValue() > maxEntry.getValue() ){
+      //if(maxEntry==null || entry.getValue().compareTo(maxEntry.getValue()) > 0 ){
         maxEntry = entry;
       }
     }
-    if(maxEntry == null)
-      return 0;
     return maxEntry.getKey();
   }
 
 
   public int getMaxRepeatedValue(){
+    if(minsValue.isEmpty())
+      return 0;
     return Collections.max(minsValue.values());
   }
 
