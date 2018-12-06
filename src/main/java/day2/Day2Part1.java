@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 //--- Day 2: Inventory Management System ---
-public class day2part1 {
+public class Day2Part1 {
  public static void main(String args[]) throws FileNotFoundException {
    Scanner in = new Scanner(new File("day2input.txt"));
 

@@ -8,11 +8,11 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 //--- Day 4: Repose Record ---
-public class Day4part1 {
+public class Day4Part1 {
   public static void main(String args[]) throws ParseException, FileNotFoundException {
 
     //create for non static access
-    Day4part1 day4part1 = new Day4part1();
+    Day4Part1 day4Part1 = new Day4Part1();
     Scanner in = new Scanner(new File("day4input.txt"));
     //map to hold the class objects
     HashMap<String,Times> map = new HashMap<>();
@@ -36,7 +36,7 @@ public class Day4part1 {
     while(count < inputStrings.size()) {
       //System.out.println(inputStrings.get(count));
       if(inputStrings.get(count).contains("Guard")){
-        String id = day4part1.getId(inputStrings.get(count));
+        String id = day4Part1.getId(inputStrings.get(count));
         count++;
         if(map.get(id) == null){
           times = new Times(id);
@@ -49,9 +49,9 @@ public class Day4part1 {
         // this will loop only through the sleep wake cycle
         while(count < inputStrings.size() && !inputStrings.get(count).contains("Guard")){
           int start=0,end=0;
-          start = day4part1.getMins(inputStrings.get(count));
+          start = day4Part1.getMins(inputStrings.get(count));
           count++;
-          end = day4part1.getMins(inputStrings.get(count));
+          end = day4Part1.getMins(inputStrings.get(count));
           //System.out.println(start + " " + end);
           count++;
 

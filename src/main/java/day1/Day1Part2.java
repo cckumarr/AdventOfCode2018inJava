@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 //
-public class day1part2 {
+public class Day1Part2 {
   public static void main(String args[]) throws FileNotFoundException {
     Scanner in;
 

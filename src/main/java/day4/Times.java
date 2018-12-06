@@ -5,38 +5,21 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Times {
+  //id of the guard
   private String id;
+  //a map of the min and the number of times the guard has slept at that particular minute
   private HashMap<Integer,Integer> minsValue;
+  //the total number of mins a guard has slept
   private int sum;
-  private int maxRepeatedValue;
 
   Times(String id){
     this.id = id;
     minsValue = new HashMap<>();
     sum=0;
-    maxRepeatedValue=0;
   }
 
   public String getId() {
     return id;
-  }
-
-  /**
-   * Sets new sum.
-   *
-   * @param sum New value of sum.
-   */
-  public void setSum(int sum) {
-    this.sum = sum;
-  }
-
-  /**
-   * Gets minsValue.
-   *
-   * @return Value of minsValue.
-   */
-  public HashMap<Integer, Integer> getMinsValue() {
-    return minsValue;
   }
 
   /**
@@ -70,18 +53,11 @@ public class Times {
 
 
   public int getMaxRepeatedValue(){
+    //check if there were no values set
     if(minsValue.isEmpty())
       return 0;
+    //return the max value in the hashmap, value here is the number of times the guard slept in the same min
     return Collections.max(minsValue.values());
-  }
-
-  /**
-   * Sets new maxRepeatedValue.
-   *
-   * @param maxRepeatedValue New value of maxRepeatedValue.
-   */
-  public void setMaxRepeatedValue(int maxRepeatedValue) {
-    this.maxRepeatedValue = maxRepeatedValue;
   }
 
   /**
@@ -90,6 +66,7 @@ public class Times {
    * @param mins New value of minsValue.
    */
   public void setMinsValue(Integer mins) {
+    //if there was no hit then put, else add 1 to what ever value was present
     if(this.minsValue.get(mins) == null){
       this.minsValue.put(mins,1);
     }else{

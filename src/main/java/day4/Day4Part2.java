@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class Day4Part2 {
   public static void main(String args[]) throws ParseException, FileNotFoundException {
 
-    Day4part1 day4part1 = new Day4part1();
+    Day4Part1 day4Part1 = new Day4Part1();
     Scanner in = new Scanner(new File("day4input.txt"));
     //ArrayList<Date> time = new ArrayList<>();
     HashMap<String,Times> map = new HashMap<>();
@@ -35,7 +35,7 @@ public class Day4Part2 {
     while(count < list.size()) {
       //System.out.println(list.get(count));
       if(list.get(count).contains("Guard")){
-        String id = day4part1.getId(list.get(count));
+        String id = day4Part1.getId(list.get(count));
         //day4part1.getTime((list.get(count)));
         count++;
         if(map.get(id) == null){
@@ -48,9 +48,9 @@ public class Day4Part2 {
       else{
         while(count < list.size() && !list.get(count).contains("Guard")){
           int start=0,end=0;
-          start = day4part1.getMins(list.get(count));
+          start = day4Part1.getMins(list.get(count));
           count++;
-          end = day4part1.getMins(list.get(count));
+          end = day4Part1.getMins(list.get(count));
           //System.out.println(start + " " + end);
           count++;
 
