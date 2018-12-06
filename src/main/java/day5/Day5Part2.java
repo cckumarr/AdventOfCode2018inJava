@@ -4,18 +4,40 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-//--- Day 5: Alchemical Reduction ---
-public class Day5part1 {
+public class Day5Part2 {
   public static void main(String args[]) throws FileNotFoundException {
-    Day5part1 day5part1 = new Day5part1();
+    Day5Part2 day5Part2 = new Day5Part2();
     Scanner in = new Scanner(new File("day5input.txt"));
     //since it only one line
     String input = in.nextLine();
     //String input = "dabAcCaCBAcCcaDA";
 
-    String finalValue = day5part1.alchemize(input);
-    System.out.println(finalValue);
-    System.out.println(finalValue.length());
+    int character = 65;
+    int minLength=Integer.MAX_VALUE;
+    while(character <= 90){
+      System.out.println(character);
+      //remove char from string
+      String withoutChar = day5Part2.removeCharacter(character,input);
+      //System.out.println(withoutChar);
+      //alchemize that string
+      String finalString = day5Part2.alchemize(withoutChar);
+      //System.out.println(finalString);
+      if(finalString.length() < minLength)
+        minLength=finalString.length();
+      character++;
+    }
+    System.out.println("min length = "+ minLength);
+  }
+
+  public String removeCharacter(int character, String str){
+    String deChared="";
+    for(char c : str.toCharArray()){
+      int value = c;
+      if(value != character && value - 32 != character && value + 32 != character){
+        deChared = deChared + c;
+      }
+    }
+    return deChared;
   }
 
   public String alchemize(String str){
@@ -49,16 +71,4 @@ public class Day5part1 {
 }
 
 
-
-// A : 65 a : 97
-
-//answer : 11894
-
-/*
-notes:
-1) did not focus on resetting the values in the while loop
-2) kept adding values to the same string making it an infinite loop
-3) add counters immidetely after starting the while loop*/
-
-
-//need to try as a recursive function
+//answer : min length = 5310
