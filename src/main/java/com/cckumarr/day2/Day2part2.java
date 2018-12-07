@@ -1,4 +1,4 @@
-package main.java.day2;
+package main.java.com.cckumarr.day2;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Day2part2 {
 
   public static void main(String args[]) throws FileNotFoundException {
-    Scanner in = new Scanner(new File("day2input.txt"));
+    Scanner in = new Scanner(new File("resources/day2input.txt"));
     ArrayList<String> arr = new ArrayList<>();
     while (in.hasNext()) {
       arr.add(in.nextLine());

@@ -1,4 +1,4 @@
-package main.java.day6;
+package main.java.com.cckumarr.day6;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -6,12 +6,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Scanner;
-import java.util.Set;
 
 //--- Day 6: Chronal Coordinates ---
 public class Day6Part1 {
   public static void main(String args[]) throws FileNotFoundException {
-    Scanner input = new Scanner(new File("day6input.txt"));
+    Scanner input = new Scanner(new File("resources/day6input.txt"));
 
     ArrayList<Integer> infiniteNumbers = new ArrayList<>();
     HashMap<Integer,Integer> map = new HashMap<>();

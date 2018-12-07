@@ -1,4 +1,4 @@
-package main.java.day2;
+package main.java.com.cckumarr.day2;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -8,7 +8,7 @@ import java.util.Scanner;
 //--- Day 2: Inventory Management System ---
 public class Day2Part1 {
  public static void main(String args[]) throws FileNotFoundException {
-   Scanner in = new Scanner(new File("day2input.txt"));
+   Scanner in = new Scanner(new File("resources/day2input.txt"));
 
    int totalTwos =0, totalThrees=0;
 

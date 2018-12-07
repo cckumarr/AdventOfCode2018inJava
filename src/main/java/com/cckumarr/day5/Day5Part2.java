@@ -1,4 +1,4 @@
-package main.java.day5;
+package main.java.com.cckumarr.day5;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Day5Part2 {
   public static void main(String args[]) throws FileNotFoundException {
     Day5Part2 day5Part2 = new Day5Part2();
-    Scanner in = new Scanner(new File("day5input.txt"));
+    Scanner in = new Scanner(new File("resources/day5input.txt"));
     //since it only one line
     String input = in.nextLine();
     //String input = "dabAcCaCBAcCcaDA";

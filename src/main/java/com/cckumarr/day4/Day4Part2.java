@@ -1,4 +1,4 @@
-package main.java.day4;
+package main.java.com.cckumarr.day4;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -12,7 +12,7 @@ public class Day4Part2 {
   public static void main(String args[]) throws ParseException, FileNotFoundException {
 
     Day4Part1 day4Part1 = new Day4Part1();
-    Scanner in = new Scanner(new File("day4input.txt"));
+    Scanner in = new Scanner(new File("resources/day4input.txt"));
     //ArrayList<Date> time = new ArrayList<>();
     HashMap<String,Times> map = new HashMap<>();
     Times times = new Times("0");

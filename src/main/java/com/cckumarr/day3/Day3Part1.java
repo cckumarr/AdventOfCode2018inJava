@@ -1,4 +1,4 @@
-package main.java.day3;
+package main.java.com.cckumarr.day3;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -7,7 +7,7 @@ import java.util.Scanner;
 //--- Day 3: No Matter How You Slice It ---
 public class Day3Part1 {
   public static void main(String args[]) throws FileNotFoundException {
-    Scanner in = new Scanner(new File("day3input.txt"));
+    Scanner in = new Scanner(new File("resources/day3input.txt"));
     String[][] integerarr = new String[1000][1000];
     int totalxs = 0;
 

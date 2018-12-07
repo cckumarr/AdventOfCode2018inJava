@@ -1,4 +1,4 @@
-package main.java.day4;
+package main.java.com.cckumarr.day4;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -13,7 +13,7 @@ public class Day4Part1 {
 
     //create for non static access
     Day4Part1 day4Part1 = new Day4Part1();
-    Scanner in = new Scanner(new File("day4input.txt"));
+    Scanner in = new Scanner(new File("resources/day4input.txt"));
     //map to hold the class objects
     HashMap<String,Times> map = new HashMap<>();
     //to hold the times object, it does not need to be initialized but my current intellij setting complain its it not initialized

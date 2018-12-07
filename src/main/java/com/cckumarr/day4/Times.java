@@ -1,4 +1,4 @@
-package main.java.day4;
+package main.java.com.cckumarr.day4;
 
 import java.util.Collections;
 import java.util.HashMap;
