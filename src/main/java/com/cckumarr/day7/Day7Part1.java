@@ -12,8 +12,7 @@ public class Day7Part1 {
   public static void main(String args[]) throws FileNotFoundException {
     ArrayList<Node> readyToBeProcessed = new ArrayList<>();
     ArrayList<Node> doneList = new ArrayList<>();
-    ArrayList<Node> allNodes = new ArrayList<>();
-    HashMap<String,Node> map = new HashMap<>();
+    HashMap<String,Node> mapOfNode = new HashMap<>();
 
     //scan and add all the elements to the map
     Scanner input = new Scanner(new File("resources/day7input.txt"));
@@ -25,18 +24,18 @@ public class Day7Part1 {
       String next = split[7];
       Node prevNode=null,nextNode=null;
 
-      if(map.get(prev) == null){
+      if(mapOfNode.get(prev) == null){
         prevNode = new Node(prev);
-        map.put(prev,prevNode);
+        mapOfNode.put(prev,prevNode);
       }else{
-        prevNode = map.get(prev);
+        prevNode = mapOfNode.get(prev);
       }
 
-      if(map.get(next) == null){
+      if(mapOfNode.get(next) == null){
         nextNode = new Node(next);
-        map.put(next,nextNode);
+        mapOfNode.put(next,nextNode);
       }else{
-        nextNode = map.get(next);
+        nextNode = mapOfNode.get(next);
       }
 
       prevNode.setConnectsTo(nextNode);
@@ -45,7 +44,7 @@ public class Day7Part1 {
     }
 
     //find the nodes with no requirements
-    for(Node n : map.values()){
+    for(Node n : mapOfNode.values()){
       if(n.getRequirements().isEmpty()){
         if(!readyToBeProcessed.contains(n)) {
           readyToBeProcessed.add(n);
