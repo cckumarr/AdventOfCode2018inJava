@@ -24,12 +24,16 @@ public class Day8Part2 {
     int count =0;
     int nodeCount=0;
 
+    //set the root node up
     node = new Node2(nodeCount++,inputInt.get(count++),inputInt.get(count++));
     s.push(node);
 
+    //setting up the tree with values
+    //adding node to stack to keep track of the parents
     while(count < inputStr.length){
       Node2 currentNode =null;
 
+      //if no child left to process on the topmost item in the stack
       if (s.peek().numChildLeftToProcess == 0) {
         currentNode = s.pop();
         for(int i=0;i<currentNode.numOfMetaDataEntries;i++){
@@ -52,6 +56,7 @@ public class Day8Part2 {
     System.out.println(day8Part2.calculateMetaVal(node));
   }
 
+  //recursive calculate the metadata of the root
   public int calculateMetaVal(Node2 root){
     if(root == null){
       return 0;
@@ -77,5 +82,16 @@ public class Day8Part2 {
 }
 
 
+// 1st to n-1th try = 0
+// answer nth try= 33649
 
-//answer = 33649
+/*
+notes to self:
+spent a lot of time on this because of an edge case(read as silly mistake) that i did not catch, it worked fine for the testinput,
+in line 71 i was checking for n>= root.children.size()
+that is if a metadata with a value on where n is equal to the number of childrens size my code was dropping that
+regularly this would be the ideal case but here we are doing a get of n-1 line 73
+because of which we were dropping the metadata with the last child, because of which i was always getting an answer of 0
+
+could have used a queue instead of an arraylist to store the split input, by doing that would have avoided the count business
+*/
