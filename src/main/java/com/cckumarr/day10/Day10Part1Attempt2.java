@@ -3,8 +3,6 @@ package main.java.com.cckumarr.day10;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.Scanner;
 
 //--- Day 10: The Stars Align ---
@@ -12,23 +10,8 @@ public class Day10Part1Attempt2 {
   public static void main(String args[]) throws FileNotFoundException {
     Scanner input = new Scanner(new File("resources/day10input.txt"));
 
-    //for test
-    //int matrixSize = 31;
-    //for input
-    //int matrixSize = 60000;
-
-    /*String[][] matrix = new String[matrixSize][matrixSize];
-    for(int i=0;i<matrixSize;i++)
-      for(int j=0; j<matrixSize; j++){
-        matrix[j][i] = ".";
-      }*/
-
-    HashMap<Integer,Integer> xss = new HashMap<>();
-    HashMap<Integer,Integer> yss = new HashMap<>();
-
     ArrayList<Integer> xs = new ArrayList<>();
     ArrayList<Integer> ys = new ArrayList<>();
-
     ArrayList<Integer> velocityxs = new ArrayList<>();
     ArrayList<Integer> velocityys = new ArrayList<>();
 
@@ -43,7 +26,6 @@ public class Day10Part1Attempt2 {
     }
 
     int numberOfsecs = 0;
-    int count=0;
     while(numberOfsecs++ < 100000){
       if(numberOfsecs > 10875) {
         if (numberOfsecs % 10 == 0) {
@@ -52,8 +34,6 @@ public class Day10Part1Attempt2 {
           }
         }
       }
-      xss = new HashMap<>();
-      yss = new HashMap<>();
 
       for(int i =0; i<xs.size(); i++) {
         xs.add(i, xs.get(i) + velocityxs.get(i));
@@ -61,31 +41,24 @@ public class Day10Part1Attempt2 {
         ys.add(i, ys.get(i) + velocityys.get(i));
         ys.remove(i+1);
       }
-
-      for(int i =0; i<xs.size(); i++)
-      {
-        if(xss.get(xs.get(i)) == null){
-          xss.put(xs.get(i),1);
-        } else {
-          xss.put(xs.get(i), xss.get(xs.get(i))+1);
-        }
-      }
-
-      for(int i =0; i<xs.size(); i++)
-      {
-        if(yss.get(ys.get(i)) == null){
-          yss.put(ys.get(i),1);
-        } else {
-          yss.put(ys.get(i), yss.get(ys.get(i))+1);
-        }
-      }
-
-      if(xss.size() == 8){
-        System.out.println();
-      }
-
     }
-
-    System.out.println();
   }
 }
+
+//answer : HKJFAKAF
+//used https://www.desmos.com/calculator for visualizing the co-ordinates, check out the image under the day10 folder
+// this is not a good way of solving, need to look at another way
+/*
+tips for future attempt:
+keep track of the decreasing coordinates
+detect increase in x and y co-ordinates
+as soon as it starts increasing store the state
+and display from x to y
+*/
+
+/*
+what i was trying before cleanup:
+store all xs, and ys points in hashmap
+when multiple value of the hashmap reach certain value cos all characters in the message will be a certain size
+this state could possibly be the answer
+*/
