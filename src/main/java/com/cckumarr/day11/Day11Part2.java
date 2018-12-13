@@ -10,6 +10,7 @@ public class Day11Part2 {
     int rackId;
     int powerLvl;
 
+    // loop over each cell and add at powerlvl
     for(int y = 0; y < 300; y++){
       for(int x = 0; x< 300; x++){
         rackId =0;
@@ -29,6 +30,7 @@ public class Day11Part2 {
       }
     }
 
+    //find the nxn with the max powerlvl
     int maxPower = Integer.MIN_VALUE;
     int maxX=0,maxY=0,maxnbyn=0;
 

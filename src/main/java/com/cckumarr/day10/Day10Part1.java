@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 //--- Day 10: The Stars Align ---
+//this code works only for the testinput, solved through non programing bruteforce in attempt2
 public class Day10Part1 {
   public static void main(String args[]) throws FileNotFoundException {
     Scanner input = new Scanner(new File("resources/day10testinput.txt"));
@@ -19,6 +20,7 @@ public class Day10Part1 {
     HashMap<Integer,Integer> xss = new HashMap<>();
     HashMap<Integer,Integer> yss = new HashMap<>();
 
+    //start the matrix with .'s
     String[][] matrix = new String[matrixSize][matrixSize];
     for(int i=0;i<matrixSize;i++)
       for(int j=0; j<matrixSize; j++){
@@ -31,6 +33,7 @@ public class Day10Part1 {
     ArrayList<Integer> velocityxs = new ArrayList<>();
     ArrayList<Integer> velocityys = new ArrayList<>();
 
+    //read all the coordinates and velocities inputs into lists
     while(input.hasNext()){
       String str = input.nextLine();
 
@@ -43,7 +46,7 @@ public class Day10Part1 {
 
     int numberOfsecs = 0;
     int count=0;
-    while(numberOfsecs++ < 10){
+    while(numberOfsecs++ < 3){
       xss = new HashMap<>();
       yss = new HashMap<>();
 
@@ -72,10 +75,6 @@ public class Day10Part1 {
         }
       }
 
-      for(int i =0; i<xs.size(); i++) {
-        System.out.println("("+xs.get(i)+","+ys.get(i)+")");
-      }
-
       for(int i=0;i<matrixSize;i++)
         for(int j=0; j<matrixSize; j++){
           matrix[j][i] = ".";
@@ -92,12 +91,6 @@ public class Day10Part1 {
           System.out.print(matrix[j][i]);
         }
       }
-
-
     }
-
-
-
-    System.out.println();
   }
 }

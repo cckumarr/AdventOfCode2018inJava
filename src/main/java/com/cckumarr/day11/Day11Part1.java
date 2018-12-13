@@ -10,6 +10,7 @@ public class Day11Part1 {
     int rackId;
     int powerLvl;
 
+    // loop over each cell and add at powerlvl
     for(int y = 0; y < 300; y++){
       for(int x = 0; x< 300; x++){
         rackId =0;
@@ -29,6 +30,7 @@ public class Day11Part1 {
       }
     }
 
+    //find the 3x3 with the max powerlvl
     int maxSum = Integer.MIN_VALUE;
     int maxX=0,maxY=0;
 
@@ -47,7 +49,6 @@ public class Day11Part1 {
         }
       }
     }
-
     System.out.println(maxSum +" "+maxX +" "+maxY);
   }
 }
