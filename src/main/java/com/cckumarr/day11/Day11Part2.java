@@ -1,7 +1,7 @@
 package main.java.com.cckumarr.day11;
 
 //--- Day 11: Chronal Charge ---
-public class Day11Part1 {
+public class Day11Part2 {
   public static void main(String args[]) {
     //input
     int gridSerialNumber = 3613;
@@ -29,32 +29,33 @@ public class Day11Part1 {
       }
     }
 
-    int maxSum = Integer.MIN_VALUE;
-    int maxX=0,maxY=0;
+    int maxPower = Integer.MIN_VALUE;
+    int maxX=0,maxY=0,maxnbyn=0;
 
-    for(int y = 0; y < 297; y++){
-      for(int x = 0; x< 297; x++){
-        int sum = 0;
-        for(int  y3by3 = y; y3by3 < y+3; y3by3++) {
-          for (int x3by3 = x; x3by3 < x+3; x3by3++) {
-            sum = sum + powerMatrix[x3by3][y3by3];
+    int count=1;
+    while(count < 300) {
+      System.out.println(count);
+      for (int y = 0; y < 300 - count; y++) {
+        for (int x = 0; x < 300 - count; x++) {
+          int sum = 0;
+          for (int ynbyn = y; ynbyn < y + count; ynbyn++) {
+            for (int xnbyn = x; xnbyn < x + count; xnbyn++) {
+              sum = sum + powerMatrix[xnbyn][ynbyn];
+            }
+          }
+          if (sum > maxPower) {
+            maxPower = sum;
+            maxX = x;
+            maxY = y;
+            maxnbyn = count;
           }
         }
-        if(sum > maxSum){
-          maxSum = sum;
-          maxX = x;
-          maxY = y;
-        }
       }
+      count++;
     }
-
-    System.out.println(maxSum +" "+maxX +" "+maxY);
+    System.out.println(maxX +" "+maxY+" "+maxnbyn);
   }
 }
 
 
-// 29 33 45
-// 30 21 61
-
-
-//Answer : 20 54 with max power of 30 for input 3613
+//Answer : 233 93 13
