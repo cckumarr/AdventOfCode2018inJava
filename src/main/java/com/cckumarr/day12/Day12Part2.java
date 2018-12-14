@@ -93,4 +93,10 @@ seems to settles down at 107
 109 : .......##.#....##.#....##.#....##.#....##.#....##.#.....##.#........##.#....##.#.....###.#....###.#....###.#....###.#....##.#....##.#....##.#....##.#....###.#....##.#....##.#......
 
 this has to be solve by some math not by running to 5Bil
+
+at generation 108  = 7976 then increases by 65 each time
+
+could calculate to 200 correctly, so (5bil - 108) * 65 + 7976(which is values before 108 when there were changes)
+
+answer : 3250000000956
 */
