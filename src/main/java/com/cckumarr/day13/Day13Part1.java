@@ -10,10 +10,15 @@ import java.util.Scanner;
 public class Day13Part1 {
   public static void main(String args[]) throws FileNotFoundException {
     //read input
-    Scanner input = new Scanner(new File("resources/day13input.txt"));
+    Scanner input = new Scanner(new File("resources/day13testinput.txt"));
 
-    int arrayXSize = 155;
-    int arrayYsize = 151;
+    //for real input
+    //int arrayXSize = 155;
+    //int arrayYsize = 151;
+
+    //for test
+    int arrayXSize = 13;
+    int arrayYsize = 6;
 
     //char[][] trackMap = new char[arrayYsize][arrayXSize];
     char[][] originalTrackMap = new char[arrayYsize][arrayXSize];
